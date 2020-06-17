@@ -98,17 +98,17 @@ a:visited.logo-header-link span {
 }
 
 .nav-contacts-list {
-  margin-left: auto;
-}
-
-.nav-contacts-list {
   display: flex;
+  margin-left: auto;
+  align-items: center;
 }
 
 .nav-contacts-list > li:not(:last-child) {
   margin-right: 30px;
 }
 .nav-contacts-list a {
+  display: inline-flex;
+  align-items: center;
   color: inherit;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -117,6 +117,20 @@ a:visited.logo-header-link span {
 .nav-contacts-list a:hover,
 .nav-contacts-list a:focus {
   color: var(--actual-color-text);
+}
+.header-mail::before {
+  content: '';
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  background-image: url('../images/decor/svg/email.svg');
+}
+.header-phone::before {
+  content: '';
+  width: 10px;
+  height: 15px;
+  margin-right: 10px;
+  background-image: url('../images/decor/svg/phone.svg');
 }
 
 /* Hero */

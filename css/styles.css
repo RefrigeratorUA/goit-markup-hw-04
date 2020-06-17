@@ -121,12 +121,20 @@ a:visited.logo-header-link span {
 
 /* Hero */
 .section-hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 200px 0;
   text-align: center;
   margin-bottom: 94px;
-  background-color: lightgrey; /* временно */
-}
-.section-hero > div {
-  padding-top: 200px;
+
+  /* hw-4 */
+  background-color: var(--second-color-text);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8)),
+    url('../images/decor/img/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .section-hero > div > h1 {
   margin: 0;
@@ -141,7 +149,6 @@ a:visited.logo-header-link span {
 .section-hero a {
   display: inline-block;
   padding: 10px 32px;
-  margin-bottom: 200px;
 
   font-size: 16px;
   font-weight: 700;

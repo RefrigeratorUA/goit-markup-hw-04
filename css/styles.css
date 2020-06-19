@@ -47,6 +47,16 @@ h2 {
   margin-right: auto;
   padding: 0 15px;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 /* Header */
 header {
@@ -113,11 +123,12 @@ a:visited.logo-header-link span {
 }
 .nav-contacts-list a:hover,
 .nav-contacts-list a:focus {
+  --color5: var(--actual-color-text);
   color: var(--actual-color-text);
 }
 .icon-nav-svg {
   padding-right: 10px;
-  fill: currentColor;
+  /* fill: currentColor; */
   line-height: 0;
   vertical-align: middle;
 }
@@ -179,10 +190,7 @@ a:visited.logo-header-link span {
 .section-skills {
   margin-bottom: 94px;
 }
-.section-skills h2,
-.footer-section-contacts h2 {
-  display: none; /* Нужно пофиксить потом  class=vissible-hiden*/
-}
+
 .section-skills > ul {
   display: flex;
   margin: 0 -15px;
@@ -264,6 +272,20 @@ a:visited.logo-header-link span {
 .section-team .card-social-list > li {
   margin: 0 5px;
 }
+.social-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.social-icon-link:hover,
+.social-icon-link:focus {
+  --color1: var(--white-index);
+  background-color: var(--actual-color-text);
+  outline: none;
+}
 /* Section Clients */
 .section-clients {
   margin-bottom: 94px;
@@ -272,11 +294,12 @@ a:visited.logo-header-link span {
   margin-bottom: 50px;
 }
 .section-clients a {
-  display: block;
-  line-height: 88px;
-}
-.section-clients img {
-  vertical-align: middle;
+  display: flex;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
 }
 .section-clients > ul {
   display: flex;
@@ -285,20 +308,23 @@ a:visited.logo-header-link span {
 .section-clients > ul > li {
   width: 170px;
   margin: 0 15px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
   text-align: center;
+}
+.client-link:hover,
+.client-link:focus {
+  outline: none;
+  --color1: var(--actual-color-text);
+  border-color: var(--actual-color-text);
 }
 
 /* Footer */
 footer {
-  padding-bottom: 21px;
+  padding-bottom: 60px;
   background-color: var(--footer-bg-color);
 }
 /* Footer Main Content */
 .footer-content {
   display: flex;
-  margin-bottom: 28px;
 }
 .logo-footer-link {
   display: inline-block;
@@ -316,9 +342,11 @@ a:visited.logo-footer-link {
 }
 /* Footer section Contacts */
 .footer-section-contacts {
-  margin-top: 45px;
+  margin-top: 60px;
+  /* margin-bottom: 60px; */
 }
 .footer-section-contacts address {
+  margin-top: 20px;
   margin-right: 69px;
   font-style: normal;
   line-height: 1.71;
@@ -336,7 +364,7 @@ a:visited.logo-footer-link {
 }
 /* Footer section Follow Me */
 .footer-section-follow-me {
-  margin-top: 57px;
+  margin-top: 72px;
 }
 .footer-section-follow-me b {
   text-transform: uppercase;
@@ -350,7 +378,11 @@ a:visited.logo-footer-link {
 }
 .footer-section-follow-me > ul > li {
   margin: 0 5px;
-  font-size: 0; /* Костыль из-за размера. Было 47 px. Можно line-height: 0;*/
+  /* font-size: 0; Костыль из-за размера. Было 47 px. Можно line-height: 0; */
+}
+footer .social-icon-link {
+  --color1: var(--white-index);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer Section Copyright */
@@ -375,8 +407,13 @@ a:visited.logo-footer-link {
 }
 /* Portfolio Buttons */
 .buttons {
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
   text-align: center;
+}
+.buttons .portfolio-button:not(:last-child) {
+  margin-right: 8px;
 }
 .portfolio-button {
   padding: 6px 22px;
@@ -391,9 +428,12 @@ a:visited.logo-footer-link {
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
+  cursor: pointer;
   outline-width: 0;
   background-color: var(--actual-color-text);
   color: var(--white-index);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .portfolio-list {
   display: flex;
@@ -423,7 +463,4 @@ a:visited.logo-footer-link {
 }
 .portfolio-list-text {
   padding: 20px 24px;
-}
-.portfolio-hidden {
-  display: none; /* Потом нужно удалить!*/
 }
